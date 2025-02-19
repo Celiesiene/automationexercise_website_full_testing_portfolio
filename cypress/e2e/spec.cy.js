@@ -39,7 +39,8 @@
 
 
 //   it('Register User', () => {
-//     cy.visit('https://automationexercise.com/')
+//     cy.visit('https://automationexercise.com/');
+//     cy.get('body').should('be.visible');
 //     cy.contains('Signup / Login').should('exist').click();
 //     cy.get('.signup-form h2').should('contain', 'New User Signup!')
 //     cy.get('[data-qa="signup-name"]').type('bebras');
@@ -84,6 +85,7 @@
 // describe('Test Case 2', () => {
 //   it('Login User with correct email and paswword', () => {
 //     cy.visit('https://automationexercise.com/')
+//     cy.get('body').should('be.visible');
 //     cy.contains('Signup / Login').should('exist').click();
 //     cy.get('.login-form h2').should('have.text', 'Login to your account').and('be.visible');
 //     cy.get('[data-qa="login-email"]').type('naujas@naujas.com');
@@ -98,6 +100,7 @@
 // describe('Test Case 3', () => {
 //   it('Login User with correct email and paswword', () => {
 //     cy.visit('https://automationexercise.com/')
+//     cy.get('body').should('be.visible')
 //     cy.contains('Signup / Login').should('exist').click();
 //     cy.get('.login-form h2').should('have.text', 'Login to your account').and('be.visible');
 //     cy.get('[data-qa="login-email"]').type('monika@monika.com');
@@ -110,6 +113,7 @@
 // describe('Test Case 4', ()=>{
 //   it('Logout User', () => {
 //         cy.visit('https://automationexercise.com/')
+// cy.get('body').should('be.visible')
 //         cy.contains('Signup / Login').should('exist').click();
 //         cy.get('.login-form h2').should('have.text', 'Login to your account').and('be.visible');
 //         cy.get('[data-qa="login-email"]').type('bebras@gmailll.com');
@@ -117,11 +121,13 @@
 //         cy.get('[data-qa="login-button"]').click();
 //         cy.contains('Logged in as').should('exist').and('be.visible');
 //         cy.get('ul.navbar-nav li').contains('Logout').click();
-//         //10. Verify that user is navigated to login page
+//         cy.url().should('eq', 'https://automationexercise.com/login');
 
 
 // })
 // })
+
+
 // describe('Test Case 5', ()=>{
 //   it('Register User with existing email', () => {
 //     cy.visit('https://automationexercise.com/')
@@ -134,11 +140,27 @@
 
 // })
 // })
+import 'cypress-file-upload';
 
-describe('Test Case 6', ()=>{
-it('Contact Us Form', ()=> {
-cy.visit('https://automationexercise.com/');
-cy.get('ul.navbar-nav li').contains('Contact us').click();
-cy.get('.contact-form h2').should
-})
+describe('Test Case 6', () => {
+  it('Contact Us Form', () => {
+    cy.visit('https://automationexercise.com/');
+    cy.get('body').should('be.visible');
+    cy.get('ul.navbar-nav li').contains('Contact us').click();
+    cy.get('.contact-form h2').contains('Get In Touch').and('be.visible');
+    cy.get('[data-qa="name"]').type('Monika');
+    cy.get('[data-qa="email"]').type('monika@monika.lt');
+    cy.get('[data-qa="subject"]').type('regarding shipping');
+    cy.get('[data-qa="message"]').type('I accidentally gave the wrong delivery address when ordering, can you change it to North Pole?');
+    cy.get('input[type="file"]').attachFile('testfile.txt');
+    cy.get('[data-qa="submit-button"]').click();
+    cy.on('window:alert', (alertText) => {
+      expect(alertText).to.eq('automationexercise.com says Press ok to proceed!');
+    });
+    cy.on('window:confirm', () => true);
+    cy.get('.alert-success').contains('Success! Your details have been submitted successfully.');
+    cy.get('a[href="/"]').contains('Home').click();
+    cy.url().should('eq', 'https://automationexercise.com/');
+    cy.get('.logo').should('be.visible');
+  })
 })
