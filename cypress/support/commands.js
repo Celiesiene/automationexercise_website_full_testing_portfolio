@@ -11,7 +11,14 @@
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
-//
+
+    
+Cypress.Commands.add('mainSteps',() => {
+    cy.visit('https://automationexercise.com/');
+        cy.get('#slider').should('be.visible');
+   
+    });
+
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
