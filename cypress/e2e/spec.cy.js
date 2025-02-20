@@ -1,4 +1,7 @@
 
+/// <reference types="cypress"/>
+
+
 // it('example', () => {
 //   cy.visit('https://automationexercise.com/')
 //   cy.contains('Signup / Login').should('exist').click(); 
@@ -233,29 +236,91 @@
 //     })
 // })
 
-describe('Test Case 12', () => {
-    it('Add Products in Cart', () => {
-        cy.mainSteps();
-        cy.get('a[href="/products"]').contains('Products').click();
-        cy.url().should('eq', 'https://automationexercise.com/products');
-        cy.get('.product-image-wrapper').eq(0).trigger('mouseover');
-        cy.get('.product-image-wrapper').eq(0).contains('Add to cart').click();
-        cy.contains('Continue Shopping').click();
-        cy.get('.product-image-wrapper').eq(1).trigger('mouseover');
-        cy.get('.product-image-wrapper').eq(1).contains('Add to cart').click();
-        cy.contains('View Cart').click();
-        cy.get('.cart_description').should('have.length', 2)
-        cy.get('.cart_price').each(($price) => {
-            cy.wrap($price).should('be.visible'); // Ensure price is displayed
-          });
-      
-        //   cy.get('.disabled').each(($quantity) => {
-        //     cy.wrap($quantity).should('have.value', '1'); // Ensure quantity is 1
-        //   });
-      
-        //   cy.get('.cart_total_price').each(($total) => {
-        //     cy.wrap($total).should('be.visible'); // Ensure total price is displayed
-        //   }); // neveikia
-    })
+// describe('Test Case 12', () => {
+//     it('Add Products in Cart', () => {
+//         cy.mainSteps();
+//         cy.get('a[href="/products"]').contains('Products').click();
+//         cy.url().should('eq', 'https://automationexercise.com/products');
+//         cy.addsSomeProducts();
+//         cy.get('.cart_description').should('have.length', 2)
+//         cy.get('.cart_price').each(($price) => {
+//             cy.wrap($price).should('be.visible'); 
+//           });
 
-})
+//         //   cy.get('.disabled').each(($quantity) => {
+//         //     cy.wrap($quantity).should('have.value', '1'); 
+//         //   }); neveikia
+
+//          cy.get('.cart_total_price').each(($total) => {
+//       cy.wrap($total).should('be.visible'); 
+//          }); 
+//     })
+
+// });
+
+// describe('Test Case 13', () => {
+//     it('Verify Product quantity in Cart', () => {
+//         cy.mainSteps();
+//         cy.get('a[href="/product_details/6"]').contains('View Product').click();
+//         cy.url().should('eq', 'https://automationexercise.com/product_details/6');
+//         cy.get('.product-information h2').contains('Summer White Top').should('be.visible');
+//         cy.get('#quantity').clear().type('4');
+//         cy.get('.btn').contains('Add to cart').click();
+//         cy.contains('View Cart').click();
+//         cy.url().should('eq', 'https://automationexercise.com/view_cart');
+//         cy.get('.cart_quantity button').invoke('text').should('eq','4');
+//     })
+// })
+
+
+// describe('Test Case 14', () => {
+//     it('Place Order: Register while Checkout', () => {
+//         cy.mainSteps();
+//         cy.addsSomeProducts();
+//         cy.url().should('eq', 'https://automationexercise.com/view_cart');
+//         cy.get('.breadcrumbs li').contains('Shopping Cart').should('be.visible');
+// cy.get('.btn').contains('Proceed To Checkout').click();
+// cy.get('a[href="/login"]').contains('Register / Login').click();
+// cy.get('[data-qa="signup-name"]').type('sausainisss');
+// cy.get('[data-qa="signup-email"]').type('sausainisss@sausainis.lt');
+// cy.get('[data-qa="signup-button"]').click();
+// cy.get('#id_gender2').click();
+//     cy.get('#name').clear().type('sausainis');
+//     // cy.get('#email').type('bebras@bebras.com');
+//     cy.get('#password').type('bebriukas');
+//     cy.get('[data-qa="days"]').select('8');
+//     cy.get('[data-qa="months"]').select('June');
+//     cy.get('[data-qa="years"]').select('1991');
+//     cy.get('#newsletter').click();
+//     cy.get('#optin').click();
+//     cy.get('#first_name').type('sausainis');
+//     cy.get('#last_name').type('selga');
+//     cy.get('#company').type('UAB Selga');
+//     cy.get('#address1').type('Miltų g.');
+//     cy.get('#address2').type('cukraus kalnas');
+//     cy.get('[data-qa="country"]').select('Canada');
+//     cy.get('#state').type('Canada State');
+//     cy.get('#city').type('Canada City');
+//     cy.get('#zipcode').type('12345');
+//     cy.get('#mobile_number').type('0987654321');
+//     cy.get('[data-qa="create-account"]').click();
+//     cy.get('[data-qa="account-created"]').contains('Account Created!');
+//     cy.get('[data-qa="continue-button"]').click();
+
+//     cy.contains('Logged in as').should('exist');
+//     cy.contains('Cart').click();
+//     cy.get('.btn').contains('Proceed To Checkout').click();
+//     cy.get('.step-one h2').contains('Address Details').should('be.visible');
+//     cy.get('.step-one h2').contains('Review Your Order').should('be.visible');
+//     cy.get('.form-group textarea').type('send my order ASAP');
+//     cy.get('a[href="/payment"]').contains('Place Order').click();
+
+//     })
+// })
+
+
+// 16. Enter payment details: Name on Card, Card Number, CVC, Expiration date
+// 17. Click 'Pay and Confirm Order' button
+// 18. Verify success message 'Your order has been placed successfully!'
+// 19. Click 'Delete Account' button
+// 20. Verify 'ACCOUNT DELETED!' and click 'Continue' button
