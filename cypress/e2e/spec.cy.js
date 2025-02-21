@@ -2,7 +2,7 @@
 /// <reference types="cypress"/>
 
 
-// it('example', () => {
+// it('example, USED TOGETHER WITH TEST 2', () => {
 //   cy.visit('https://automationexercise.com/')
 //   cy.contains('Signup / Login').should('exist').click(); 
 //   cy.get('.signup-form h2').should('contain', 'New User Signup!')
@@ -35,7 +35,6 @@
 //     cy.get('[data-qa="continue-button"]').click();
 //     cy.contains('Logged in as').should('exist');
 // })
-
 
 
 // describe('Test Case 1', () => {
@@ -226,12 +225,12 @@
 // describe('Test Case 11', ()=>{
 //     it('Verify Subscription in Cart page', ()=>{
 //         cy.mainSteps();
-// // 4. Click 'Cart' button
-// cy.get('a[href="/view_cart"]').contains('Cart').click();
-// // 5. Scroll down to footer
-// // 6. Verify text 'SUBSCRIPTION'
-// // 7. Enter email address in input and click arrow button
-// // 8. Verify success message 'You have been successfully subscribed!' is visible
+//         cy.contains('Cart').click();
+//         cy.scrollTo('bottom');
+//         cy.get('.single-widget h2').contains('Subscription').should('be.visible');
+//         cy.get('#susbscribe_email').type('mama@mama.lt');
+//         cy.get('#subscribe').click();
+//         cy.contains('You have been successfully subscribed!', { timeout: 2000 }).should('be.visible');
 
 //     })
 // })
@@ -281,8 +280,8 @@
 //         cy.get('.breadcrumbs li').contains('Shopping Cart').should('be.visible');
 // cy.get('.btn').contains('Proceed To Checkout').click();
 // cy.get('a[href="/login"]').contains('Register / Login').click();
-// cy.get('[data-qa="signup-name"]').type('sausainisss');
-// cy.get('[data-qa="signup-email"]').type('sausainisss@sausainis.lt');
+// cy.get('[data-qa="signup-name"]').type('sausainiukas');
+// cy.get('[data-qa="signup-email"]').type('sausainiukas@sausainis.lt');
 // cy.get('[data-qa="signup-button"]').click();
 // cy.get('#id_gender2').click();
 //     cy.get('#name').clear().type('sausainis');
@@ -314,13 +313,48 @@
 //     cy.get('.step-one h2').contains('Review Your Order').should('be.visible');
 //     cy.get('.form-group textarea').type('send my order ASAP');
 //     cy.get('a[href="/payment"]').contains('Place Order').click();
+// cy.get('[data-qa="name-on-card"]').type('Selga sausainis');
+// cy.get('[data-qa="card-number"]').type('123456789');
+// cy.get('[data-qa="cvc"]').type('123');
+// cy.get('[data-qa="expiry-month"]').type('10');
+// cy.get('[data-qa="expiry-year"]').type('2020');
+// cy.get('[data-qa="pay-button"]').click();
+// cy.get('[data-qa="order-placed"]').contains('Order Placed!').should('be.visible');
+// cy.get('a[href="/delete_account"]').contains('Delete Account').click();
+// cy.get('[data-qa="continue-button"]').click();
+
 
 //     })
 // })
 
+// describe('Test Case 15',()=>{
+//     it('Place Order:Register before Checkout', ()=>{
+//        cy.mainSteps(); 
+//        cy.get('a[href="/login"]').contains('Signup / Login').click();
+//        cy.get('[data-qa="signup-name"]').type('nnamass');
+//        cy.get('[data-qa="signup-email"]').type('nnamass@namai.com');
+//        cy.get('[data-qa="signup-button"]').click();
+//        cy.createAcc();
+//        cy.contains('Logged in as').should('exist').and('be.visible');
+//        cy.addsSomeProducts();
+//        cy.contains('Cart').click();
+//     })
+// })
 
-// 16. Enter payment details: Name on Card, Card Number, CVC, Expiration date
-// 17. Click 'Pay and Confirm Order' button
-// 18. Verify success message 'Your order has been placed successfully!'
-// 19. Click 'Delete Account' button
-// 20. Verify 'ACCOUNT DELETED!' and click 'Continue' button
+
+
+
+
+
+
+
+
+// 10. Verify that cart page is displayed
+// 11. Click Proceed To Checkout
+// 12. Verify Address Details and Review Your Order
+// 13. Enter description in comment text area and click 'Place Order'
+// 14. Enter payment details: Name on Card, Card Number, CVC, Expiration date
+// 15. Click 'Pay and Confirm Order' button
+// 16. Verify success message 'Your order has been placed successfully!'
+// 17. Click 'Delete Account' button
+// 18. Verify 'ACCOUNT DELETED!' and click 'Continue' button

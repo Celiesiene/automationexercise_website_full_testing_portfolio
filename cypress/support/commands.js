@@ -20,7 +20,7 @@ Cypress.Commands.add('mainSteps', () => {
 });
 
 
-Cypress.Commands.add('addsSomeProducts', ()=>{
+Cypress.Commands.add('addsSomeProducts', () => {
     cy.get('.product-image-wrapper').eq(0).trigger('mouseover');
     cy.get('.product-image-wrapper').eq(0).contains('Add to cart').click();
     cy.contains('Continue Shopping').click();
@@ -29,6 +29,27 @@ Cypress.Commands.add('addsSomeProducts', ()=>{
     cy.contains('View Cart').click();
 })
 
+Cypress.Commands.add('createAcc',()=>{
+    cy.get('#password').type('bebriukas');
+    cy.get('[data-qa="days"]').select('8');
+    cy.get('[data-qa="months"]').select('June');
+    cy.get('[data-qa="years"]').select('1991');
+    cy.get('#newsletter').click();
+    cy.get('#optin').click();
+    cy.get('#first_name').type('sausainis');
+    cy.get('#last_name').type('selga');
+    cy.get('#company').type('UAB Selga');
+    cy.get('#address1').type('Miltų g.');
+    cy.get('#address2').type('cukraus kalnas');
+    cy.get('[data-qa="country"]').select('Canada');
+    cy.get('#state').type('Canada State');
+    cy.get('#city').type('Canada City');
+    cy.get('#zipcode').type('12345');
+    cy.get('#mobile_number').type('0987654321');
+    cy.get('[data-qa="create-account"]').click();
+    cy.get('[data-qa="account-created"]').contains('Account Created!');
+    cy.get('[data-qa="continue-button"]').click(); 
+})
 
 
 //
