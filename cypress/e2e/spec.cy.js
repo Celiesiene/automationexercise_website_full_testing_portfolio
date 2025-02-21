@@ -98,7 +98,7 @@
 // })
 
 // describe('Test Case 3', () => {
-//   it('Login User with correct email and paswword', () => {
+//   it('Login User with correct email and pasword', () => {
 //   cy.mainSteps();
 //     cy.contains('Signup / Login').should('exist').click();
 //     cy.get('.login-form h2').should('have.text', 'Login to your account').and('be.visible');
@@ -278,50 +278,46 @@
 //         cy.addsSomeProducts();
 //         cy.url().should('eq', 'https://automationexercise.com/view_cart');
 //         cy.get('.breadcrumbs li').contains('Shopping Cart').should('be.visible');
-// cy.get('.btn').contains('Proceed To Checkout').click();
-// cy.get('a[href="/login"]').contains('Register / Login').click();
-// cy.get('[data-qa="signup-name"]').type('sausainiukas');
-// cy.get('[data-qa="signup-email"]').type('sausainiukas@sausainis.lt');
-// cy.get('[data-qa="signup-button"]').click();
-// cy.get('#id_gender2').click();
-//     cy.get('#name').clear().type('sausainis');
-//     // cy.get('#email').type('bebras@bebras.com');
-//     cy.get('#password').type('bebriukas');
-//     cy.get('[data-qa="days"]').select('8');
-//     cy.get('[data-qa="months"]').select('June');
-//     cy.get('[data-qa="years"]').select('1991');
-//     cy.get('#newsletter').click();
-//     cy.get('#optin').click();
-//     cy.get('#first_name').type('sausainis');
-//     cy.get('#last_name').type('selga');
-//     cy.get('#company').type('UAB Selga');
-//     cy.get('#address1').type('Miltų g.');
-//     cy.get('#address2').type('cukraus kalnas');
-//     cy.get('[data-qa="country"]').select('Canada');
-//     cy.get('#state').type('Canada State');
-//     cy.get('#city').type('Canada City');
-//     cy.get('#zipcode').type('12345');
-//     cy.get('#mobile_number').type('0987654321');
-//     cy.get('[data-qa="create-account"]').click();
-//     cy.get('[data-qa="account-created"]').contains('Account Created!');
-//     cy.get('[data-qa="continue-button"]').click();
+//         cy.get('.btn').contains('Proceed To Checkout').click();
+//         cy.get('a[href="/login"]').contains('Register / Login').click();
+//         cy.get('[data-qa="signup-name"]').type('sausainiukas');
+//         cy.get('[data-qa="signup-email"]').type('sausainiukas@sausainis.lt');
+//         cy.get('[data-qa="signup-button"]').click();
+//         cy.get('#id_gender2').click();
+//         cy.get('#name').clear().type('sausainis');
+//         // cy.get('#email').type('bebras@bebras.com');
+//         cy.get('#password').type('bebriukas');
+//         cy.get('[data-qa="days"]').select('8');
+//         cy.get('[data-qa="months"]').select('June');
+//         cy.get('[data-qa="years"]').select('1991');
+//         cy.get('#newsletter').click();
+//         cy.get('#optin').click();
+//         cy.get('#first_name').type('sausainis');
+//         cy.get('#last_name').type('selga');
+//         cy.get('#company').type('UAB Selga');
+//         cy.get('#address1').type('Miltų g.');
+//         cy.get('#address2').type('cukraus kalnas');
+//         cy.get('[data-qa="country"]').select('Canada');
+//         cy.get('#state').type('Canada State');
+//         cy.get('#city').type('Canada City');
+//         cy.get('#zipcode').type('12345');
+//         cy.get('#mobile_number').type('0987654321');
+//         cy.get('[data-qa="create-account"]').click();
+//         cy.get('[data-qa="account-created"]').contains('Account Created!');
+//         cy.get('[data-qa="continue-button"]').click();
 
-//     cy.contains('Logged in as').should('exist');
-//     cy.contains('Cart').click();
-//     cy.get('.btn').contains('Proceed To Checkout').click();
-//     cy.get('.step-one h2').contains('Address Details').should('be.visible');
-//     cy.get('.step-one h2').contains('Review Your Order').should('be.visible');
-//     cy.get('.form-group textarea').type('send my order ASAP');
-//     cy.get('a[href="/payment"]').contains('Place Order').click();
-// cy.get('[data-qa="name-on-card"]').type('Selga sausainis');
-// cy.get('[data-qa="card-number"]').type('123456789');
-// cy.get('[data-qa="cvc"]').type('123');
-// cy.get('[data-qa="expiry-month"]').type('10');
-// cy.get('[data-qa="expiry-year"]').type('2020');
-// cy.get('[data-qa="pay-button"]').click();
-// cy.get('[data-qa="order-placed"]').contains('Order Placed!').should('be.visible');
-// cy.get('a[href="/delete_account"]').contains('Delete Account').click();
-// cy.get('[data-qa="continue-button"]').click();
+//         cy.contains('Logged in as').should('exist');
+//         cy.contains('Cart').click();
+//         cy.get('.btn').contains('Proceed To Checkout').click();
+//         cy.get('.step-one h2').contains('Address Details').should('be.visible');
+//         cy.get('.step-one h2').contains('Review Your Order').should('be.visible');
+//         cy.get('.form-group textarea').type('send my order ASAP');
+//         cy.get('a[href="/payment"]').contains('Place Order').click();
+
+//         cy.paymentCardData();
+//         cy.get('[data-qa="order-placed"]').contains('Order Placed!').should('be.visible');
+//         cy.get('a[href="/delete_account"]').contains('Delete Account').click();
+//         cy.get('[data-qa="continue-button"]').click();
 
 
 //     })
@@ -331,30 +327,78 @@
 //     it('Place Order:Register before Checkout', ()=>{
 //        cy.mainSteps(); 
 //        cy.get('a[href="/login"]').contains('Signup / Login').click();
-//        cy.get('[data-qa="signup-name"]').type('nnamass');
-//        cy.get('[data-qa="signup-email"]').type('nnamass@namai.com');
+//        cy.get('[data-qa="signup-name"]').type('telefonas');
+//        cy.get('[data-qa="signup-email"]').type('telefonas@telefonas.com');
 //        cy.get('[data-qa="signup-button"]').click();
 //        cy.createAcc();
 //        cy.contains('Logged in as').should('exist').and('be.visible');
 //        cy.addsSomeProducts();
 //        cy.contains('Cart').click();
+//        cy.get('.breadcrumbs').contains('Shopping Cart').should('exist');
+//        cy.contains('Proceed To Checkout').click(); //AR TIK TAIP GALIMA ???
+//        cy.get('.step-one h2').contains('Address Details').should('be.visible');
+//        cy.get('.step-one h2').contains('Review Your Order').should('be.visible');
+//        cy.get('.form-group textarea').type('send my order ASAP');
+//        cy.get('a[href="/payment"]').contains('Place Order').click();
+//        cy.paymentCardData();
+//        // 16. Verify success message 'Your order has been placed successfully!' NEPAGAUNU
+//     //    cy.get('#success_message').contains('Your order has been placed successfully!').should('be.visible'); NEVEIKIA
+//     cy.get('[data-qa="order-placed"]').contains('Order Placed!').should('be.visible');
+//     cy.get('a[href="/delete_account"]').contains('Delete Account').click();
+//     cy.get('[data-qa="continue-button"]').click();
 //     })
 // })
 
+// describe('Test Case 16', () => {
+//     it('Place Order:Login before Checkout', () => {
+//         cy.mainSteps();
+//         cy.get('a[href="/login"]').contains('Signup / Login').click();
+//         cy.get('[data-qa="login-email"]').type('namas@namai.com');
+//         cy.get('[data-qa="login-password"]').type('bebriukas');
+//         cy.get('[data-qa="login-button"]').click();
+//         cy.contains('Logged in as').should('exist').and('be.visible');
+//         cy.addsSomeProducts();
+//         cy.contains('Cart').click();
+//         cy.get('.breadcrumbs').contains('Shopping Cart').should('exist');
+//         cy.contains('Proceed To Checkout').click(); //AR TIK TAIP GALIMA ???
+//         cy.get('.step-one h2').contains('Address Details').should('be.visible');
+//         cy.get('.step-one h2').contains('Review Your Order').should('be.visible');
+//         cy.get('.form-group textarea').type('send my order ASAP');
+//         cy.get('a[href="/payment"]').contains('Place Order').click();
+//         cy.paymentCardData();
+//         // 16. Verify success message 'Your order has been placed successfully!' NEPAGAUNU
+//         //    cy.get('#success_message').contains('Your order has been placed successfully!').should('be.visible'); NEVEIKIA
+//         cy.get('[data-qa="order-placed"]').contains('Order Placed!').should('be.visible');
+//         cy.get('a[href="/delete_account"]').contains('Delete Account').click();
+//         cy.get('[data-qa="continue-button"]').click();
+//     })
+// });
 
+// describe('Test Case 17', ()=>{
+//     it('Remove Products From Cart', ()=>{
+//         cy.mainSteps();
+//         cy.addsSomeProducts();
+//         cy.contains('Cart').click();
+//         cy.get('.breadcrumbs').contains('Shopping Cart').should('exist');
+//         cy.get('a[href="/product_details/1"]').contains('Blue Top').should('be.visible');
+//         cy.get('a[href="/product_details/2"]').contains('Men Tshirt').should('be.visible');
+//         cy.get('[data-product-id="1"]').click();
+//         cy.get('a[href="/product_details/1"]').should('not.exist');
 
+//     })
+// });
 
+describe('Test Case 18', ()=>{
+    it('View Category Products', ()=>{
+        cy.mainSteps();
+    })
+})
 
-
-
-
-
-// 10. Verify that cart page is displayed
-// 11. Click Proceed To Checkout
-// 12. Verify Address Details and Review Your Order
-// 13. Enter description in comment text area and click 'Place Order'
-// 14. Enter payment details: Name on Card, Card Number, CVC, Expiration date
-// 15. Click 'Pay and Confirm Order' button
-// 16. Verify success message 'Your order has been placed successfully!'
-// 17. Click 'Delete Account' button
-// 18. Verify 'ACCOUNT DELETED!' and click 'Continue' button
+// 1. Launch browser
+// 2. Navigate to url 'http://automationexercise.com'
+// 3. Verify that categories are visible on left side bar
+// 4. Click on 'Women' category
+// 5. Click on any category link under 'Women' category, for example: Dress
+// 6. Verify that category page is displayed and confirm text 'WOMEN - TOPS PRODUCTS'
+// 7. On left side bar, click on any sub-category link of 'Men' category
+// 8. Verify that user is navigated to that category page

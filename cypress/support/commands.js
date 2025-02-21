@@ -29,7 +29,7 @@ Cypress.Commands.add('addsSomeProducts', () => {
     cy.contains('View Cart').click();
 })
 
-Cypress.Commands.add('createAcc',()=>{
+Cypress.Commands.add('createAcc', () => {
     cy.get('#password').type('bebriukas');
     cy.get('[data-qa="days"]').select('8');
     cy.get('[data-qa="months"]').select('June');
@@ -48,8 +48,19 @@ Cypress.Commands.add('createAcc',()=>{
     cy.get('#mobile_number').type('0987654321');
     cy.get('[data-qa="create-account"]').click();
     cy.get('[data-qa="account-created"]').contains('Account Created!');
-    cy.get('[data-qa="continue-button"]').click(); 
+    cy.get('[data-qa="continue-button"]').click();
+});
+
+Cypress.Commands.add('paymentCardData', () => {
+    cy.get('[data-qa="name-on-card"]').type('Selga sausainis');
+    cy.get('[data-qa="card-number"]').type('123456789');
+    cy.get('[data-qa="cvc"]').type('123');
+    cy.get('[data-qa="expiry-month"]').type('10');
+    cy.get('[data-qa="expiry-year"]').type('2020');
+    cy.get('[data-qa="pay-button"]').click();
 })
+
+
 
 
 //
