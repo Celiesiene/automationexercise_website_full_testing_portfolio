@@ -3,102 +3,64 @@
 
 
 // it('example, USED TOGETHER WITH TEST 2', () => {
-//   cy.visit('https://automationexercise.com/')
-//   cy.contains('Signup / Login').should('exist').click(); 
-//   cy.get('.signup-form h2').should('contain', 'New User Signup!')
-//   cy.get('[data-qa="signup-name"]').type('naujas');
-//   cy.get('[data-qa="signup-email"]').type('naujas@naujas.com');
-//   cy.get('[data-qa="signup-button"]').click();
-//   cy.get('.login-form h2').should('exist');
-//     cy.get('.login-form h2').contains('Enter Account Information')
-//     cy.get('#id_gender2').click();
-//     cy.get('#name').type('bebras');
-//     // cy.get('#email').type('bebras@bebras.com');
-//     cy.get('#password').type('bebriukas');
-//     cy.get('[data-qa="days"]').select('8');
-//     cy.get('[data-qa="months"]').select('June');
-//     cy.get('[data-qa="years"]').select('1991');
-//     cy.get('#newsletter').click();
-//     cy.get('#optin').click();
-//     cy.get('#first_name').type('bebras');
-//     cy.get('#last_name').type('bebrauskas');
-//     cy.get('#company').type('UAB Bebrai');
-//     cy.get('#address1').type('Miško str.');
-//     cy.get('#address2').type('near the big tree');
-//     cy.get('[data-qa="country"]').select('Canada');
-//     cy.get('#state').type('Canada State');
-//     cy.get('#city').type('Canada City');
-//     cy.get('#zipcode').type('12345');
-//     cy.get('#mobile_number').type('0987654321');
-//     cy.get('[data-qa="create-account"]').click();
-//     cy.get('[data-qa="account-created"]').contains('Account Created!');
-//     cy.get('[data-qa="continue-button"]').click();
-//     cy.contains('Logged in as').should('exist');
-// })
-
-
-// describe('Test Case 1', () => {
-
-
-//   it('Register User', () => {
-//     cy.mainSteps();
-//     cy.contains('Signup / Login').should('exist').click(); //kai si pakeist??
+//     cy.visit('https://automationexercise.com/')
+//     cy.contains('Signup / Login').should('exist').click();
 //     cy.get('.signup-form h2').should('contain', 'New User Signup!')
-//     cy.get('[data-qa="signup-name"]').type('bebras');
-//     cy.get('[data-qa="signup-email"]').type('bebras@bebriukas.com');
-//     cy.get('[data-qa="signup-name"]').should('have.value', 'bebras');
-//     cy.get('[data-qa="signup-email"]').should('have.value', 'bebras@bebriukas.com');
+//     cy.get('[data-qa="signup-name"]').type('naujas');
+//     cy.get('[data-qa="signup-email"]').type('naujas@naujas.com');
 //     cy.get('[data-qa="signup-button"]').click();
 //     cy.get('.login-form h2').should('exist');
 //     cy.get('.login-form h2').contains('Enter Account Information')
 //     cy.get('#id_gender2').click();
-//     cy.get('#name').type('bebras');
+//     cy.get('#name').type(' bebras');
 //     // cy.get('#email').type('bebras@bebras.com');
-//     cy.get('#password').type('bebriukas');
-//     cy.get('[data-qa="days"]').select('8');
-//     cy.get('[data-qa="months"]').select('June');
-//     cy.get('[data-qa="years"]').select('1991');
-//     cy.get('#newsletter').click();
-//     cy.get('#optin').click();
-//     cy.get('#first_name').type('bebras');
-//     cy.get('#last_name').type('bebrauskas');
-//     cy.get('#company').type('UAB Bebrai');
-//     cy.get('#address1').type('Miško str.');
-//     cy.get('#address2').type('near the big tree');
-//     cy.get('[data-qa="country"]').select('Canada');
-//     cy.get('#state').type('Canada State');
-//     cy.get('#city').type('Canada City');
-//     cy.get('#zipcode').type('12345');
-//     cy.get('#mobile_number').type('0987654321');
-//     cy.get('[data-qa="create-account"]').click();
-//     cy.get('[data-qa="account-created"]').contains('Account Created!');
-//     cy.get('[data-qa="continue-button"]').click();
-//     cy.contains('Logged in as').should('exist');
-//     cy.contains('Delete Account').should('exist').click();
-    // cy.get('[data-qa="account-deleted"]').should('be.visible');
-    // cy.get('[data-qa="continue-button"]').click();
+//     cy.createAcc();
+//     cy.contains('Logged in as naujas bebras').should('exist');
+// })
 
 
-//   })
+// describe('Test Case 1', () => {
+//     it('Register User', () => {
+//         cy.mainSteps();
+//         cy.contains('Signup / Login').should('exist').click(); //KAIP PAKEISTI VIETOJ CONTAINS???
+//         cy.get('.signup-form h2').should('contain', 'New User Signup!')
+//         cy.get('[data-qa="signup-name"]').type('bebras');
+//         cy.get('[data-qa="signup-email"]').type('bebras@bebriukas.com');
+//         cy.get('[data-qa="signup-name"]').should('have.value', 'bebras');
+//         cy.get('[data-qa="signup-email"]').should('have.value', 'bebras@bebriukas.com');
+//         cy.get('[data-qa="signup-button"]').click();
+//         cy.get('.login-form h2').should('exist');
+//         cy.get('.login-form h2').contains('Enter Account Information')
+//         cy.get('#id_gender2').click();
+//         cy.get('#name').type('bebras');
+//         // cy.get('#email').type('bebras@bebras.com');
+//         cy.createAcc();
+//         cy.contains('Logged in as').should('exist');
+//         cy.contains('Delete Account').should('exist').click();
+//         cy.get('[data-qa="account-deleted"]').should('be.visible');
+//         cy.get('[data-qa="continue-button"]').click();
+
+
+//     })
 
 // });
 
 // describe('Test Case 2', () => {
-//   it('Login User with correct email and paswword', () => {
-//     cy.mainSteps();
-//     cy.contains('Signup / Login').should('exist').click();
-//     cy.get('.login-form h2').should('have.text', 'Login to your account').and('be.visible');
-//     cy.get('[data-qa="login-email"]').type('naujas@naujas.com');
-//     cy.get('[data-qa="login-password"]').type('bebriukas');
-//     cy.get('[data-qa="login-button"]').click();
-//     cy.contains('Logged in as').should('exist').and('be.visible');
-//     cy.contains('Delete Account').should('exist').click();
-//     cy.get('[data-qa="account-deleted"]').should('be.visible');
-//   })
+//     it('Login User with correct email and password', () => {
+//         cy.mainSteps();
+//         cy.contains('Signup / Login').should('exist').click();
+//         cy.get('.login-form h2').should('have.text', 'Login to your account').and('be.visible');
+//         cy.get('[data-qa="login-email"]').type('naujas@naujas.com');
+//         cy.get('[data-qa="login-password"]').type('bebriukas');
+//         cy.get('[data-qa="login-button"]').click();
+//         cy.contains('Logged in as naujas bebras').should('exist').and('be.visible');
+//         cy.contains('Delete Account').should('exist').click();
+//         cy.get('[data-qa="account-deleted"]').should('be.visible');
+//     })
 // })
 
 // describe('Test Case 3', () => {
-//   it('Login User with correct email and pasword', () => {
+//   it('Login User with incorrect email and password', () => {
 //   cy.mainSteps();
 //     cy.contains('Signup / Login').should('exist').click();
 //     cy.get('.login-form h2').should('have.text', 'Login to your account').and('be.visible');
@@ -109,20 +71,20 @@
 //   })
 // });
 
-// describe('Test Case 4', ()=>{
-//   it('Logout User', () => {
-// cy.mainSteps();
+// describe('Test Case 4', () => {
+//     it('Logout User', () => {
+//         cy.mainSteps();
 //         cy.contains('Signup / Login').should('exist').click();
 //         cy.get('.login-form h2').should('have.text', 'Login to your account').and('be.visible');
 //         cy.get('[data-qa="login-email"]').type('bebras@gmailll.com');
 //         cy.get('[data-qa="login-password"]').type('bebriukas');
 //         cy.get('[data-qa="login-button"]').click();
-//         cy.contains('Logged in as').should('exist').and('be.visible');
+//         cy.contains('Logged in as bebrasbebras').should('exist').and('be.visible');
 //         cy.get('ul.navbar-nav li').contains('Logout').click();
 //         cy.url().should('eq', 'https://automationexercise.com/login');
 
 
-// })
+//     })
 // })
 
 
@@ -243,16 +205,14 @@
 //         cy.addsSomeProducts();
 //         cy.get('.cart_description').should('have.length', 2)
 //         cy.get('.cart_price').each(($price) => {
-//             cy.wrap($price).should('be.visible'); 
-//           });
-
-//         //   cy.get('.disabled').each(($quantity) => {
-//         //     cy.wrap($quantity).should('have.value', '1'); 
-//         //   }); neveikia
-
-//          cy.get('.cart_total_price').each(($total) => {
-//       cy.wrap($total).should('be.visible'); 
-//          }); 
+//             cy.wrap($price).should('be.visible');
+//         });
+//         cy.get('.cart_quantity').each(($quantity) => {
+//             cy.wrap($quantity).find('button').contains('1');
+//         });
+//         cy.get('.cart_total_price').each(($total) => {
+//             cy.wrap($total).should('be.visible');
+//         });
 //     })
 
 // });
@@ -286,34 +246,14 @@
 //         cy.get('#id_gender2').click();
 //         cy.get('#name').clear().type('sausainis');
 //         // cy.get('#email').type('bebras@bebras.com');
-//         cy.get('#password').type('bebriukas');
-//         cy.get('[data-qa="days"]').select('8');
-//         cy.get('[data-qa="months"]').select('June');
-//         cy.get('[data-qa="years"]').select('1991');
-//         cy.get('#newsletter').click();
-//         cy.get('#optin').click();
-//         cy.get('#first_name').type('sausainis');
-//         cy.get('#last_name').type('selga');
-//         cy.get('#company').type('UAB Selga');
-//         cy.get('#address1').type('Miltų g.');
-//         cy.get('#address2').type('cukraus kalnas');
-//         cy.get('[data-qa="country"]').select('Canada');
-//         cy.get('#state').type('Canada State');
-//         cy.get('#city').type('Canada City');
-//         cy.get('#zipcode').type('12345');
-//         cy.get('#mobile_number').type('0987654321');
-//         cy.get('[data-qa="create-account"]').click();
-//         cy.get('[data-qa="account-created"]').contains('Account Created!');
-//         cy.get('[data-qa="continue-button"]').click();
-
-//         cy.contains('Logged in as').should('exist');
+//         cy.createAcc();
+//         cy.contains('Logged in as sausainis').should('exist');
 //         cy.contains('Cart').click();
 //         cy.get('.btn').contains('Proceed To Checkout').click();
 //         cy.get('.step-one h2').contains('Address Details').should('be.visible');
 //         cy.get('.step-one h2').contains('Review Your Order').should('be.visible');
 //         cy.get('.form-group textarea').type('send my order ASAP');
 //         cy.get('a[href="/payment"]').contains('Place Order').click();
-
 //         cy.paymentCardData();
 //         cy.get('[data-qa="order-placed"]').contains('Order Placed!').should('be.visible');
 //         cy.get('a[href="/delete_account"]').contains('Delete Account').click();
@@ -341,19 +281,26 @@
 //        cy.get('.form-group textarea').type('send my order ASAP');
 //        cy.get('a[href="/payment"]').contains('Place Order').click();
 //        cy.paymentCardData();
+
 //        // 16. Verify success message 'Your order has been placed successfully!' NEPAGAUNU
-//     //    cy.get('#success_message').contains('Your order has been placed successfully!').should('be.visible'); NEVEIKIA
+
+//     // cy.contains('Your order has been placed successfully!').should('be.visible');
 //     cy.get('[data-qa="order-placed"]').contains('Order Placed!').should('be.visible');
 //     cy.get('a[href="/delete_account"]').contains('Delete Account').click();
 //     cy.get('[data-qa="continue-button"]').click();
 //     })
 // })
 
+
+
+
+
+
 // describe('Test Case 16', () => {
 //     it('Place Order:Login before Checkout', () => {
 //         cy.mainSteps();
 //         cy.get('a[href="/login"]').contains('Signup / Login').click();
-//         cy.get('[data-qa="login-email"]').type('namas@namai.com');
+//         cy.get('[data-qa="login-email"]').type('lape@snape.com');
 //         cy.get('[data-qa="login-password"]').type('bebriukas');
 //         cy.get('[data-qa="login-button"]').click();
 //         cy.contains('Logged in as').should('exist').and('be.visible');
@@ -367,7 +314,7 @@
 //         cy.get('a[href="/payment"]').contains('Place Order').click();
 //         cy.paymentCardData();
 //         // 16. Verify success message 'Your order has been placed successfully!' NEPAGAUNU
-//         //    cy.get('#success_message').contains('Your order has been placed successfully!').should('be.visible'); NEVEIKIA
+//         //    cy.contains('Your order has been placed successfully!').should('be.visible'); NEVEIKIA
 //         cy.get('[data-qa="order-placed"]').contains('Order Placed!').should('be.visible');
 //         cy.get('a[href="/delete_account"]').contains('Delete Account').click();
 //         cy.get('[data-qa="continue-button"]').click();
@@ -420,19 +367,19 @@
 //     })
 // });
 
-describe('Test Case 20(Case 21)', () => {
-    it('Add review on product', () => {
-        cy.mainSteps();
-        cy.get('a[href="/products"]').contains('Products').click();
-        cy.get('.features_items h2').contains('All Products').should('be.visible');
-        cy.get('.features_items .col-sm-4').its('length').should('be.greaterThan', 0);
-        cy.get('a[href="/product_details/1"]').contains('View Product').click();
-        cy.get('a[href="#reviews"]').contains('Write Your Review').should('be.visible');
-        cy.get('#name').type('Monika');
-        cy.get('#email').type('monika@monika.lt');
-        cy.get('#review').type('What a wonderful product!');
-        cy.get('#button-review').click();
-        cy.contains('Thank you for your review', { timeout: 1000 }).should('be.visible');
+// describe('Test Case 20(Case 21)', () => {
+//     it('Add review on product', () => {
+//         cy.mainSteps();
+//         cy.get('a[href="/products"]').contains('Products').click();
+//         cy.get('.features_items h2').contains('All Products').should('be.visible');
+//         cy.get('.features_items .col-sm-4').its('length').should('be.greaterThan', 0);
+//         cy.get('a[href="/product_details/1"]').contains('View Product').click();
+//         cy.get('a[href="#reviews"]').contains('Write Your Review').should('be.visible');
+//         cy.get('#name').type('Monika');
+//         cy.get('#email').type('monika@monika.lt');
+//         cy.get('#review').type('What a wonderful product!');
+//         cy.get('#button-review').click();
+//         cy.contains('Thank you for your review', { timeout: 1000 }).should('be.visible');
 
-    })
-});
+//     })
+// });
