@@ -293,6 +293,20 @@
 
 
 
+// it('example, USED TOGETHER WITH TEST 16', () => {
+//     cy.visit('https://automationexercise.com/')
+//     cy.contains('Signup / Login').should('exist').click();
+//     cy.get('.signup-form h2').should('contain', 'New User Signup!')
+//     cy.get('[data-qa="signup-name"]').type('lokys');
+//     cy.get('[data-qa="signup-email"]').type('lokys@lokys.com');
+//     cy.get('[data-qa="signup-button"]').click();
+//     cy.get('.login-form h2').should('exist');
+//     cy.get('.login-form h2').contains('Enter Account Information')
+//     cy.get('#id_gender2').click();
+//     cy.get('#name').type(' lokiukas');
+//     cy.createAcc();
+//     cy.contains('Logged in as lokys lokiukas').should('exist');
+// })
 
 
 
@@ -300,7 +314,7 @@
 //     it('Place Order:Login before Checkout', () => {
 //         cy.mainSteps();
 //         cy.get('a[href="/login"]').contains('Signup / Login').click();
-//         cy.get('[data-qa="login-email"]').type('lape@snape.com');
+//         cy.get('[data-qa="login-email"]').type('lokys@lokys.com');
 //         cy.get('[data-qa="login-password"]').type('bebriukas');
 //         cy.get('[data-qa="login-button"]').click();
 //         cy.contains('Logged in as').should('exist').and('be.visible');
