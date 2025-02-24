@@ -75,8 +75,8 @@
 //     cy.get('[data-qa="continue-button"]').click();
 //     cy.contains('Logged in as').should('exist');
 //     cy.contains('Delete Account').should('exist').click();
-//     cy.get('[data-qa="account-deleted"]').should('be.visible');
-//     cy.get('[data-qa="continue-button"]').click();
+    // cy.get('[data-qa="account-deleted"]').should('be.visible');
+    // cy.get('[data-qa="continue-button"]').click();
 
 
 //   })
@@ -388,17 +388,51 @@
 //     })
 // });
 
-describe('Test Case 18', ()=>{
-    it('View Category Products', ()=>{
-        cy.mainSteps();
-    })
-})
+// describe('Test Case 18', () => {
+//     it('View Category Products', () => {
+//         cy.mainSteps();
+//         cy.get('.left-sidebar').should('be.visible');
+//         cy.get('a[href="#Women"]').contains('Women').click();
+//         cy.get('.panel-body ul li').contains('Dress').click();
+//         cy.get('.breadcrumb li').contains('Women > Dress').should('be.visible');
+//         cy.get('.features_items h2').contains('Women - Dress Products').should('be.visible');
+//         cy.get('a[href="#Men"]').contains('Men').click();
+//         cy.get('.panel-body ul li').contains('Jeans').click();
+//         cy.get('.breadcrumb li').contains('Men > Jeans').should('be.visible');
+//         cy.get('.features_items h2').contains('Men - Jeans Products').should('be.visible');
+//     })
+// });
 
-// 1. Launch browser
-// 2. Navigate to url 'http://automationexercise.com'
-// 3. Verify that categories are visible on left side bar
-// 4. Click on 'Women' category
-// 5. Click on any category link under 'Women' category, for example: Dress
-// 6. Verify that category page is displayed and confirm text 'WOMEN - TOPS PRODUCTS'
-// 7. On left side bar, click on any sub-category link of 'Men' category
-// 8. Verify that user is navigated to that category page
+// describe('Test Case 19', ()=> {
+//     it('View & Cart Brand Products', ()=>{
+//         cy.mainSteps();
+//         cy.get('a[href="/products"]').contains('Products').click();
+//         cy.get('.brands_products').should('be.visible');
+//         cy.get('a[href="/brand_products/H&M"]').contains('H&M').click();
+//         cy.get('.breadcrumb li').contains('H&M').should('be.visible');
+//         cy.get('.features_items').should('be.visible');
+//         cy.get('.features_items .col-sm-4').its('length').should('be.greaterThan', 0);
+//         cy.get('a[href="/brand_products/Biba"]').contains('Biba').click();
+//         cy.get('.breadcrumb li').contains('Biba').should('be.visible');
+//         cy.get('.features_items h2').contains('Brand - Biba Products').should('be.visible');
+//         cy.get('.features_items .col-sm-4').its('length').should('be.greaterThan', 0);
+
+//     })
+// });
+
+describe('Test Case 20(Case 21)', () => {
+    it('Add review on product', () => {
+        cy.mainSteps();
+        cy.get('a[href="/products"]').contains('Products').click();
+        cy.get('.features_items h2').contains('All Products').should('be.visible');
+        cy.get('.features_items .col-sm-4').its('length').should('be.greaterThan', 0);
+        cy.get('a[href="/product_details/1"]').contains('View Product').click();
+        cy.get('a[href="#reviews"]').contains('Write Your Review').should('be.visible');
+        cy.get('#name').type('Monika');
+        cy.get('#email').type('monika@monika.lt');
+        cy.get('#review').type('What a wonderful product!');
+        cy.get('#button-review').click();
+        cy.contains('Thank you for your review', { timeout: 1000 }).should('be.visible');
+
+    })
+});
