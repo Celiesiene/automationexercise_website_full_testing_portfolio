@@ -1,30 +1,13 @@
-🚀 Cypress E2E Test Suite
+## 🌟 Key Features
 
-🌟 Key Features
+Feature | Description  
+--------|------------  
+🔐 **User Authentication** | Signup, Login, Logout  
+📋 **Form Validations** | Error handling & validations  
+🔄 **Navigation & UI Tests** | Ensuring smooth user interactions  
+🔌 **API Response Validation** | Checking backend responses  
+🛍 **Product & Cart Operations** | Testing shopping workflows  
 
-Feature
-
-Description
-
-🔐 User Authentication
-
-Signup, Login, Logout
-
-📋 Form Validations
-
-Error handling & validations
-
-🔄 Navigation & UI Tests
-
-Ensuring smooth user interactions
-
-🔌 API Response Validation
-
-Checking backend responses
-
-🛍 Product & Cart Operations
-
-Testing shopping workflows
 
 ⚙️ Installation & Setup
 
