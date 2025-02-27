@@ -15,9 +15,9 @@ Feature | Description
 
 Ensure you have the following installed:
 
-Node.js
+- Node.js
 
-Cypress
+- Cypress
 
 ## 🚀 Quick Setup
 
