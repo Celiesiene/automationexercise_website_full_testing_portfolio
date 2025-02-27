@@ -9,9 +9,9 @@ Feature | Description
 🛍 **Product & Cart Operations** | Testing shopping workflows  
 
 
-⚙️ Installation & Setup
+## ⚙️ Installation & Setup
 
-Prerequisites
+### Prerequisites
 
 Ensure you have the following installed:
 
@@ -19,16 +19,19 @@ Node.js
 
 Cypress
 
-🚀 Quick Setup
+## 🚀 Quick Setup
 
-# Clone the repository
+### Clone the repository
+```
 git clone <https://github.com/Celiesiene/automationexercise_website_full_testing_portfolio>
-cd <automationexercise_website_full_testing_portfolio>
+```
 
-# Install dependencies
+### Install dependencies
+```
 npm install
+```
 
-▶️ Running the Tests
+## ▶️ Running the Tests
 
 Open Cypress UI
 
@@ -38,7 +41,7 @@ Select 20TestCases.cy.js in the Cypress Test Runner.
 
 Run Tests in Headless Mode
 
-npx cypress run --spec cypress/e2e/20TestCases.cy.js
+npx cypress run cypress/e2e/20TestCases.cy.js
 
 📁 Folder Structure
 

@@ -197,25 +197,25 @@
 //     })
 // })
 
-// describe('Test Case 12', () => {
-//     it('Add Products in Cart', () => {
-//         cy.mainSteps();
-//         cy.get('a[href="/products"]').contains('Products').click();
-//         cy.url().should('eq', 'https://automationexercise.com/products');
-//         cy.addsSomeProducts();
-//         cy.get('.cart_description').should('have.length', 2)
-//         cy.get('.cart_price').each(($price) => {
-//             cy.wrap($price).should('be.visible');
-//         });
-//         cy.get('.cart_quantity').each(($quantity) => {
-//             cy.wrap($quantity).find('button').contains('1');
-//         });
-//         cy.get('.cart_total_price').each(($total) => {
-//             cy.wrap($total).should('be.visible');
-//         });
-//     })
+describe('Test Case 12', () => {
+    it('Add Products in Cart', () => {
+        cy.mainSteps();
+        cy.get('a[href="/products"]').contains('Products').click();
+        cy.url().should('eq', 'https://automationexercise.com/products');
+        cy.addsSomeProducts();
+        cy.get('.cart_description').should('have.length', 2)
+        cy.get('.cart_price').each(($price) => {
+            cy.wrap($price).should('be.visible');
+        });
+        cy.get('.cart_quantity').each(($quantity) => {
+            cy.wrap($quantity).find('button').contains('1');
+        });
+        cy.get('.cart_total_price').each(($total) => {
+            cy.wrap($total).should('be.visible');
+        });
+    })
 
-// });
+});
 
 // describe('Test Case 13', () => {
 //     it('Verify Product quantity in Cart', () => {
@@ -267,11 +267,11 @@
 //     it('Place Order:Register before Checkout', ()=>{
 //        cy.mainSteps(); 
 //        cy.get('a[href="/login"]').contains('Signup / Login').click();
-//        cy.get('[data-qa="signup-name"]').type('telefonas');
-//        cy.get('[data-qa="signup-email"]').type('telefonas@telefonas.com');
+//        cy.get('[data-qa="signup-name"]').type('naujokelissss');
+//        cy.get('[data-qa="signup-email"]').type('naujokelisss@naujokas.com');
 //        cy.get('[data-qa="signup-button"]').click();
 //        cy.createAcc();
-//        cy.contains('Logged in as').should('exist').and('be.visible');
+//        cy.contains('Logged in as naujokelissss').should('exist').and('be.visible');
 //        cy.addsSomeProducts();
 //        cy.contains('Cart').click();
 //        cy.get('.breadcrumbs').contains('Shopping Cart').should('exist');
@@ -284,7 +284,9 @@
 
 //        // 16. Verify success message 'Your order has been placed successfully!' NEPAGAUNU
 
-//     // cy.contains('Your order has been placed successfully!').should('be.visible');
+//     // cy.get('.alert-success', { timeout: 1000 }).contains('Your order has been placed successfully!').should('be.visible');
+
+
 //     cy.get('[data-qa="order-placed"]').contains('Order Placed!').should('be.visible');
 //     cy.get('a[href="/delete_account"]').contains('Delete Account').click();
 //     cy.get('[data-qa="continue-button"]').click();
