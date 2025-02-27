@@ -43,13 +43,12 @@ Run Tests in Headless Mode
 
 npx cypress run cypress/e2e/20TestCases.cy.js
 
-📁 Folder Structure
+## 📁 Folder Structure
 
-cypress/
-├── e2e/
-│   ├── 20TestCases.cy.js   # Main test suite file
-│   ├── 14 Api Test.cy.js      # Api test cases
-├── fixtures/               # Test data
-├── support/                # Custom commands and utilities
-├── cypress.config.js       # Cypress configuration
-
+```bash
+📁 cypress
+ ┣ 📁 e2e           # Test files
+ ┣ 📁 fixtures      # Test data (JSON files)
+ ┗ 📁 support       # Custom commands and support utilities
+```
+ 
