@@ -30,7 +30,7 @@ Cypress.Commands.add('addsSomeProducts', () => {
 })
 
 Cypress.Commands.add('createAcc', () => {
-    cy.session('createAccSession',()=>{
+    // cy.session('createAccSession',()=>{
         cy.get('#password').type('bebriukas');
         cy.get('[data-qa="days"]').select('8');
         cy.get('[data-qa="months"]').select('June');
@@ -51,7 +51,7 @@ Cypress.Commands.add('createAcc', () => {
         cy.get('[data-qa="account-created"]').contains('Account Created!');
         cy.get('[data-qa="continue-button"]').click();
     });
-    })
+    // })
  
 
 

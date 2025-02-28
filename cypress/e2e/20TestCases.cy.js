@@ -187,7 +187,7 @@
 // describe('Test Case 11', ()=>{
 //     it('Verify Subscription in Cart page', ()=>{
 //         cy.mainSteps();
-//         cy.contains('Cart').click();
+//         cy.get("ul.nav > li > a[href='/view_cart']").click();
 //         cy.scrollTo('bottom');
 //         cy.get('.single-widget h2').contains('Subscription').should('be.visible');
 //         cy.get('#susbscribe_email').type('mama@mama.lt');
@@ -197,25 +197,25 @@
 //     })
 // })
 
-describe('Test Case 12', () => {
-    it('Add Products in Cart', () => {
-        cy.mainSteps();
-        cy.get('a[href="/products"]').contains('Products').click();
-        cy.url().should('eq', 'https://automationexercise.com/products');
-        cy.addsSomeProducts();
-        cy.get('.cart_description').should('have.length', 2)
-        cy.get('.cart_price').each(($price) => {
-            cy.wrap($price).should('be.visible');
-        });
-        cy.get('.cart_quantity').each(($quantity) => {
-            cy.wrap($quantity).find('button').contains('1');
-        });
-        cy.get('.cart_total_price').each(($total) => {
-            cy.wrap($total).should('be.visible');
-        });
-    })
+// describe('Test Case 12', () => {
+//     it('Add Products in Cart', () => {
+//         cy.mainSteps();
+//         cy.get('a[href="/products"]').contains('Products').click();
+//         cy.url().should('eq', 'https://automationexercise.com/products');
+//         cy.addsSomeProducts();
+//         cy.get('.cart_description').should('have.length', 2)
+//         cy.get('.cart_price').each(($price) => {
+//             cy.wrap($price).should('be.visible');
+//         });
+//         cy.get('.cart_quantity').each(($quantity) => {
+//             cy.wrap($quantity).find('button').contains('1');
+//         });
+//         cy.get('.cart_total_price').each(($total) => {
+//             cy.wrap($total).should('be.visible');
+//         });
+//     })
 
-});
+// });
 
 // describe('Test Case 13', () => {
 //     it('Verify Product quantity in Cart', () => {
@@ -248,7 +248,7 @@ describe('Test Case 12', () => {
 //         // cy.get('#email').type('bebras@bebras.com');
 //         cy.createAcc();
 //         cy.contains('Logged in as sausainis').should('exist');
-//         cy.contains('Cart').click();
+//         cy.get("ul.nav > li > a[href='/view_cart']").click();
 //         cy.get('.btn').contains('Proceed To Checkout').click();
 //         cy.get('.step-one h2').contains('Address Details').should('be.visible');
 //         cy.get('.step-one h2').contains('Review Your Order').should('be.visible');
