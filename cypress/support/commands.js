@@ -64,7 +64,7 @@ Cypress.Commands.add('paymentCardData', () => {
     cy.get('[data-qa="cvc"]').type('123');
     cy.get('[data-qa="expiry-month"]').type('10');
     cy.get('[data-qa="expiry-year"]').type('2020');
-    cy.get('[data-qa="pay-button"]').click();
+   
 })
 
 

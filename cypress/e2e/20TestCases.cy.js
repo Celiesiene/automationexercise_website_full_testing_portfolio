@@ -263,33 +263,38 @@
 //     })
 // })
 
-// describe('Test Case 15',()=>{
-//     it('Place Order:Register before Checkout', ()=>{
-//        cy.mainSteps(); 
-//        cy.get('a[href="/login"]').contains('Signup / Login').click();
-//        cy.get('[data-qa="signup-name"]').type('naujokelissss');
-//        cy.get('[data-qa="signup-email"]').type('naujokelisss@naujokas.com');
-//        cy.get('[data-qa="signup-button"]').click();
-//        cy.createAcc();
-//        cy.contains('Logged in as naujokelissss').should('exist').and('be.visible');
-//        cy.addsSomeProducts();
-//        cy.contains('Cart').click();
-//        cy.get('.breadcrumbs').contains('Shopping Cart').should('exist');
-//        cy.contains('Proceed To Checkout').click(); //AR TIK TAIP GALIMA ???
-//        cy.get('.step-one h2').contains('Address Details').should('be.visible');
-//        cy.get('.step-one h2').contains('Review Your Order').should('be.visible');
-//        cy.get('.form-group textarea').type('send my order ASAP');
-//        cy.get('a[href="/payment"]').contains('Place Order').click();
-//        cy.paymentCardData();
-
-//        // 16. Verify success message 'Your order has been placed successfully!' NEPAGAUNU
-
-//     // cy.get('.alert-success', { timeout: 1000 }).contains('Your order has been placed successfully!').should('be.visible');
-
-
-//     cy.get('[data-qa="order-placed"]').contains('Order Placed!').should('be.visible');
-//     cy.get('a[href="/delete_account"]').contains('Delete Account').click();
-//     cy.get('[data-qa="continue-button"]').click();
+// describe('Test Case 15', () => {
+//     it('Place Order:Register before Checkout', () => {
+//         cy.mainSteps();
+//         cy.get('a[href="/login"]').contains('Signup / Login').click();
+//         cy.get('[data-qa="signup-name"]').type('naujokelissss');
+//         cy.get('[data-qa="signup-email"]').type('naujokelisss@naujokas.com');
+//         cy.get('[data-qa="signup-button"]').click();
+//         cy.createAcc();
+//         cy.contains('Logged in as naujokelissss').should('exist').and('be.visible');
+//         cy.addsSomeProducts();
+//         cy.contains('Cart').click();
+//         cy.get('.breadcrumbs').contains('Shopping Cart').should('exist');
+//         cy.contains('Proceed To Checkout').click(); //AR TIK TAIP GALIMA ???
+//         cy.get('.step-one h2').contains('Address Details').should('be.visible');
+//         cy.get('.step-one h2').contains('Review Your Order').should('be.visible');
+//         cy.get('.form-group textarea').type('send my order ASAP');
+//         cy.get('a[href="/payment"]').contains('Place Order').click();
+//         cy.paymentCardData();
+//         cy.get('form#payment-form').then(($form) => {
+//             $form.on('submit', (e) => {
+//                 e.preventDefault(); // Stop the form from being submitted automatically
+//             });
+//         });
+//         cy.get('[data-qa="pay-button"]').click();
+//         cy.get("#success_message > .alert-success").should("contain.text", "Your order has been placed successfully!");
+//         cy.get('form#payment-form').then(($form) => {
+//             $form.off('submit');
+//         });
+//         cy.get('[data-qa="pay-button"]').click();
+//         cy.get('[data-qa="order-placed"]').contains('Order Placed!').should('be.visible');
+//         cy.get('a[href="/delete_account"]').contains('Delete Account').click();
+//         cy.get('[data-qa="continue-button"]').click();
 //     })
 // })
 
@@ -329,8 +334,17 @@
 //         cy.get('.form-group textarea').type('send my order ASAP');
 //         cy.get('a[href="/payment"]').contains('Place Order').click();
 //         cy.paymentCardData();
-//         // 16. Verify success message 'Your order has been placed successfully!' NEPAGAUNU
-//         //    cy.contains('Your order has been placed successfully!').should('be.visible'); NEVEIKIA
+//         cy.get('form#payment-form').then(($form) => {
+//             $form.on('submit', (e) => {
+//                 e.preventDefault(); // Stop the form from being submitted automatically
+//             });
+//         });
+//         cy.get('[data-qa="pay-button"]').click();
+//         cy.get("#success_message > .alert-success").should("contain.text", "Your order has been placed successfully!");
+//         cy.get('form#payment-form').then(($form) => {
+//             $form.off('submit');
+//         });
+//         cy.get('[data-qa="pay-button"]').click();
 //         cy.get('[data-qa="order-placed"]').contains('Order Placed!').should('be.visible');
 //         cy.get('a[href="/delete_account"]').contains('Delete Account').click();
 //         cy.get('[data-qa="continue-button"]').click();
