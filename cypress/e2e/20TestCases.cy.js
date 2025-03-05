@@ -2,21 +2,7 @@
 /// <reference types="cypress"/>
 
 
-it('example, USED TOGETHER WITH TEST 2', () => {
-    cy.visit('https://automationexercise.com/')
-    cy.contains('Signup / Login').should('exist').click();
-    cy.get('.signup-form h2').should('contain', 'New User Signup!')
-    cy.get('[data-qa="signup-name"]').type('naujas');
-    cy.get('[data-qa="signup-email"]').type('naujas@naujas.com');
-    cy.get('[data-qa="signup-button"]').click();
-    cy.get('.login-form h2').should('exist');
-    cy.get('.login-form h2').contains('Enter Account Information')
-    cy.get('#id_gender2').click();
-    cy.get('#name').type(' bebras');
-    // cy.get('#email').type('bebras@bebras.com');
-    cy.createAcc();
-    cy.contains('Logged in as naujas bebras').should('exist');
-})
+
 
 
 describe('Test Case 1', () => {
@@ -46,14 +32,31 @@ describe('Test Case 1', () => {
 });
 
 describe('Test Case 2', () => {
+
+    it('example, USED TOGETHER WITH TEST 2', () => {
+        cy.visit('https://automationexercise.com/')
+        cy.contains('Signup / Login').should('exist').click();
+        cy.get('.signup-form h2').should('contain', 'New User Signup!')
+        cy.get('[data-qa="signup-name"]').type('nauuujas');
+        cy.get('[data-qa="signup-email"]').type('nauuujas@naujas.com');
+        cy.get('[data-qa="signup-button"]').click();
+        cy.get('.login-form h2').should('exist');
+        cy.get('.login-form h2').contains('Enter Account Information')
+        cy.get('#id_gender2').click();
+        cy.get('#name').type(' bebras');
+        // cy.get('#email').type('bebras@bebras.com');
+        cy.createAcc();
+        cy.contains('Logged in as nauuujas bebras').should('exist');
+    })
+
     it('Login User with correct email and password', () => {
         cy.mainSteps();
         cy.contains('Signup / Login').should('exist').click();
         cy.get('.login-form h2').should('have.text', 'Login to your account').and('be.visible');
-        cy.get('[data-qa="login-email"]').type('naujas@naujas.com');
+        cy.get('[data-qa="login-email"]').type('nauuujas@naujas.com');
         cy.get('[data-qa="login-password"]').type('bebriukas');
         cy.get('[data-qa="login-button"]').click();
-        cy.contains('Logged in as naujas bebras').should('exist').and('be.visible');
+        cy.contains('Logged in as nauuujas bebras').should('exist').and('be.visible');
         cy.contains('Delete Account').should('exist').click();
         cy.get('[data-qa="account-deleted"]').should('be.visible');
     })
@@ -301,24 +304,25 @@ describe('Test Case 15', () => {
 
 
 
-it('example, USED TOGETHER WITH TEST 16', () => {
-    cy.visit('https://automationexercise.com/')
-    cy.contains('Signup / Login').should('exist').click();
-    cy.get('.signup-form h2').should('contain', 'New User Signup!')
-    cy.get('[data-qa="signup-name"]').type('lokys');
-    cy.get('[data-qa="signup-email"]').type('lokys@lokys.com');
-    cy.get('[data-qa="signup-button"]').click();
-    cy.get('.login-form h2').should('exist');
-    cy.get('.login-form h2').contains('Enter Account Information')
-    cy.get('#id_gender2').click();
-    cy.get('#name').type(' lokiukas');
-    cy.createAcc();
-    cy.contains('Logged in as lokys lokiukas').should('exist');
-})
 
 
 
 describe('Test Case 16', () => {
+    it('example, USED TOGETHER WITH TEST 16', () => {
+        cy.visit('https://automationexercise.com/')
+        cy.contains('Signup / Login').should('exist').click();
+        cy.get('.signup-form h2').should('contain', 'New User Signup!')
+        cy.get('[data-qa="signup-name"]').type('lokys');
+        cy.get('[data-qa="signup-email"]').type('lokys@lokys.com');
+        cy.get('[data-qa="signup-button"]').click();
+        cy.get('.login-form h2').should('exist');
+        cy.get('.login-form h2').contains('Enter Account Information')
+        cy.get('#id_gender2').click();
+        cy.get('#name').type(' lokiukas');
+        cy.createAcc();
+        cy.contains('Logged in as lokys lokiukas').should('exist');
+    })
+    
     it('Place Order:Login before Checkout', () => {
         cy.mainSteps();
         cy.get('a[href="/login"]').contains('Signup / Login').click();
