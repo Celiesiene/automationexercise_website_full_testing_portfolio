@@ -240,8 +240,8 @@ describe('Test Case 14', () => {
         cy.get('.breadcrumbs li').contains('Shopping Cart').should('be.visible');
         cy.get('.btn').contains('Proceed To Checkout').click();
         cy.get('a[href="/login"]').contains('Register / Login').click();
-        cy.get('[data-qa="signup-name"]').type('sausainiukas');
-        cy.get('[data-qa="signup-email"]').type('sausainiukas@sausainis.lt');
+        cy.get('[data-qa="signup-name"]').type('ssausainiukasss');
+        cy.get('[data-qa="signup-email"]').type('ssausainiukasss@sausainis.lt');
         cy.get('[data-qa="signup-button"]').click();
         cy.get('#id_gender2').click();
         cy.get('#name').clear().type('sausainis');
@@ -255,6 +255,7 @@ describe('Test Case 14', () => {
         cy.get('.form-group textarea').type('send my order ASAP');
         cy.get('a[href="/payment"]').contains('Place Order').click();
         cy.paymentCardData();
+        cy.get('[data-qa="pay-button"]').click();
         cy.get('[data-qa="order-placed"]').contains('Order Placed!').should('be.visible');
         cy.get('a[href="/delete_account"]').contains('Delete Account').click();
         cy.get('[data-qa="continue-button"]').click();
